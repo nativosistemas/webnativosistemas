@@ -2,6 +2,15 @@
 
 $(document).ready(function () {
     document.getElementById("year").innerHTML = new Date().getFullYear() ;
+    $("#menu-close").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
  /*   if (isEnviarMail == null) {
         isEnviarMail = $('#hiddenEnvioMail').val();
         if (typeof isEnviarMail == 'undefined') {
@@ -17,7 +26,7 @@ $(document).ready(function () {
     }*/
 });
 
-
+   
 var waitingDialog = waitingDialog || (function ($) {
     'use strict';
 
