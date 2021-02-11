@@ -11,13 +11,11 @@
   <meta name="distribution" content="Global" />
   <meta name="author" content="Nativo Sistemas" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <meta name="description"
     content="Empresa dedicada al desarrollo de sistemas web, software a medida, aplicaciones móviles y e-commerce. Le aportamos soluciones a las empresas con soluciones a medida para cada necesidad." />
   <meta name="keywords"
     content="desarrollo y programación web, sistemas web, software a medida, aplicaciones móviles, e-commerce, Argentina, Rosario, equipos personalizados" />
   <meta name="title" content="Nativo Sistemas" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
   <!-- Open Graph data -->
   <meta property="og:title" content="Nativo Sistemas" />
@@ -42,11 +40,13 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Nativo Sistemas</title>
+
+  
   <link href="includes/css/bootstrap.min.css" rel="stylesheet" />
   <link href="includes/css/stylish-portfolio.css" rel="stylesheet" />
   <link href="includes/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" /> 
-   <!--<link href="font-awesome/css/family_SourceSansPro.css" rel="stylesheet" type="text/css" /> -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
   <script type="text/javascript">
       (function (i, s, o, g, r, a, m) {
           i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -77,53 +77,6 @@
     <script src="includes/js/jquery.js"></script>
     <script src="includes/js/bootstrap.min.js"></script>
     <script src="includes/js/main.js?n=4"></script>
-    <script type="text/javascript">
-      $("#menu-close").click(function (e) {
-          e.preventDefault();
-          $("#sidebar-wrapper").toggleClass("active");
-      });
-      $("#menu-toggle").click(function (e) {
-          e.preventDefault();
-          $("#sidebar-wrapper").toggleClass("active");
-      });
-      $(function () {
-          $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function () {
-              if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                  var target = $(this.hash);
-                  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                  if (target.length) {
-                      $('html,body').animate({
-                          scrollTop: target.offset().top
-                      }, 1000);
-                      return false;
-                  }
-              }
-          });
-      });
-      var fixed = false;
-      $(document).scroll(function () {
-          if ($(this).scrollTop() > 250) {
-              if (!fixed) {
-                  fixed = true;
-                  $('#to-top').show("slow", function () {
-                      $('#to-top').css({
-                          position: 'fixed',
-                          display: 'block'
-                      });
-                  });
-              }
-          } else {
-              if (fixed) {
-                  fixed = false;
-                  $('#to-top').hide("slow", function () {
-                      $('#to-top').css({
-                          display: 'none'
-                      });
-                  });
-              }
-          }
-      });
-  </script>
 </body>
 
 </html>
