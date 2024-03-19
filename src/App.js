@@ -116,9 +116,7 @@ function App() {
                   <li><i className="fa fa-envelope-o fa-fw"></i><a href="mailto:nativosistemas@outlook.com.ar">nativosistemas@outlook.com.ar</a>
                   </li>
                 </ul>
-                <br />
-                <hr className="small" />
-                <p className="text-muted">Copyright &copy; <span id="year"></span></p>
+                          
               </div>
             </div>
           </div>
