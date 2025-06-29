@@ -4,10 +4,10 @@ import './App.css';
 function App() {
   return (
     <>
-      <a id="menu-toggle" href="#" className="btn btn-dark btn-lg toggle" ><i class="fa fa-bars"></i></a>
+      <a id="menu-toggle"  className="btn btn-dark btn-lg toggle" ><i class="fa fa-bars"></i></a>
       <nav id="sidebar-wrapper">
         <ul className="sidebar-nav">
-          <a id="menu-close" href="#" className="btn btn-light btn-lg pull-right toggle"><i className="fa fa-times"></i></a>
+          <a id="menu-close"  className="btn btn-light btn-lg pull-right toggle"><i className="fa fa-times"></i></a>
           <li className="sidebar-brand">
             <a href="#top" onclick="$('#menu-close').click();">Menu</a>
           </li>
