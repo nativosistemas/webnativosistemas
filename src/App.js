@@ -111,8 +111,7 @@ function App() {
                 <p>
                   Urquiza 1455 - Rosario - Santa Fe - Argentina
                         </p>
-                <ul className="list-unstyled">
-                  <li><i className="fa fa-phone fa-fw"></i>(0341) 153340199</li>
+                <ul className="list-unstyled">                 
                   <li><i className="fa fa-envelope-o fa-fw"></i><a href="mailto:nativosistemas@outlook.com.ar">nativosistemas@outlook.com.ar</a>
                   </li>
                 </ul>
