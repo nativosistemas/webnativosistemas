@@ -15,6 +15,10 @@ jobs:
         with:
           node-version: '22.x'
 
+      - name: Set homepage in package.json
+        run: |
+          jq '.homepage="/webnativosistemas"' package.json > tmp.json && mv tmp.json package.json          
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile # o npm ci
 
