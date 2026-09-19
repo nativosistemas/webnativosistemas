@@ -1,24 +1,30 @@
 //import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen((isOpen) => !isOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <>
-      <button  id="menu-toggle"  className="btn btn-dark btn-lg toggle" ><i class="fa fa-bars"></i></button >
-      <nav id="sidebar-wrapper">
+      <button id="menu-toggle" className="btn btn-dark btn-lg toggle" onClick={toggleMenu} type="button"><i className="fa fa-bars"></i></button>
+      <nav id="sidebar-wrapper" className={isMenuOpen ? 'active' : ''}>
         <ul className="sidebar-nav">
-          <button id="menu-close"  className="btn btn-light btn-lg pull-right toggle"><i className="fa fa-times"></i></button>
+          <button id="menu-close" className="btn btn-light btn-lg pull-right toggle" onClick={closeMenu} type="button"><i className="fa fa-times"></i></button>
           <li className="sidebar-brand">
-            <a href="#top" onclick="$('#menu-close').click();">Menu</a>
+            <a href="#top" onClick={closeMenu}>Menu</a>
           </li>
           <li>
-            <a href="#top" onclick="$('#menu-close').click();">Inicio</a>
+            <a href="#top" onClick={closeMenu}>Inicio</a>
           </li>
           <li>
-            <a href="#services" onclick="$('#menu-close').click();">Servicios</a>
+            <a href="#services" onClick={closeMenu}>Servicios</a>
           </li>
           <li>
-            <a href="#contactPie" onclick="$('#menu-close').click();">Contacto</a>
+            <a href="#contactPie" onClick={closeMenu}>Contacto</a>
           </li>
         </ul>
       </nav>
@@ -29,7 +35,7 @@ function App() {
           </div>
         </div>
       </header>
-      <section id="about" class="about">
+      <section id="about" className="about">
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
