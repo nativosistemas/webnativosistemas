@@ -16,6 +16,7 @@
 
 .topbar {
   min-height: 92px;
+  padding-block: 28px 12px;
   justify-content: space-between;
   gap: 24px;
 }
@@ -272,6 +273,7 @@
 
   .topbar {
     min-height: 78px;
+    padding-block: 20px 8px;
   }
 
   .contact-section {
