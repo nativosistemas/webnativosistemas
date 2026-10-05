@@ -33,6 +33,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import StorageIcon from '@mui/icons-material/Storage';
+import { company, hero, highlights, intro, processSteps, services, stats } from './content';
 import './App.css';
 
 const navItems = [
@@ -41,46 +42,12 @@ const navItems = [
   { label: 'Contacto', href: '#contact' },
 ];
 
-const services = [
-  {
-    icon: <CodeIcon fontSize="large" />,
-    title: 'Sitios y sistemas web',
-    text: 'Diseñamos sitios y sistemas web autoadministrables, rápidos y preparados para acompañar el crecimiento de tu negocio.',
-  },
-  {
-    icon: <StorageIcon fontSize="large" />,
-    title: 'Software a medida',
-    text: 'Automatizamos procesos internos para que tu equipo trabaje mejor, más rápido y con menos pasos manuales.',
-  },
-  {
-    icon: <ShoppingCartOutlinedIcon fontSize="large" />,
-    title: 'E-commerce',
-    text: 'Integramos tiendas online con foco en conversión, gestión simple y una experiencia de compra clara.',
-  },
-  {
-    icon: <PhoneIphoneIcon fontSize="large" />,
-    title: 'Aplicaciones móviles',
-    text: 'Creamos apps funcionales para que clientes y equipos puedan trabajar desde cualquier dispositivo.',
-  },
-];
-
-const stats = [
-  { value: '100%', label: 'Enfoque en negocio real' },
-  { value: '3 pasos', label: 'Proceso claro y ágil' },
-  { value: '24/7', label: 'Disponibilidad digital' },
-];
-
-const highlights = [
-  'Estrategia digital con objetivos de negocio claros.',
-  'Interfaces simples, intuitivas y fáciles de administrar.',
-  'Tecnología moderna y arquitectura pensada para crecer.',
-];
-
-const processSteps = [
-  'Relevamos objetivos, usuarios y puntos de fricción para definir la ruta correcta.',
-  'Diseñamos una solución con estructura clara y una experiencia funcional desde el inicio.',
-  'Desarrollamos, validamos y acompañamos la evolución del producto después del lanzamiento.',
-];
+const serviceIcons = {
+  web: <CodeIcon fontSize="large" />,
+  software: <StorageIcon fontSize="large" />,
+  ecommerce: <ShoppingCartOutlinedIcon fontSize="large" />,
+  mobile: <PhoneIphoneIcon fontSize="large" />,
+};
 
 const theme = createTheme({
   palette: {
@@ -175,7 +142,7 @@ function App() {
             slotProps={{ paper: { id: 'mobile-menu' } }}
           >
             <Box className="drawer-content">
-              <Stack direction="row" justifyContent="space-between" alignItems="center">
+              <Stack direction="row" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
                 <Typography component="p" variant="h6">
                   Menú
                 </Typography>
@@ -195,11 +162,8 @@ function App() {
 
           <Container maxWidth="lg" className="hero-content">
             <Chip label="Software a medida" color="secondary" className="hero-chip" />
-            <Typography variant="h1">Soluciones digitales para impulsar tu empresa.</Typography>
-            <Typography className="hero-copy">
-              Diseñamos y desarrollamos sistemas web, tiendas online y aplicaciones móviles con foco en rendimiento,
-              usabilidad y crecimiento a largo plazo.
-            </Typography>
+            <Typography variant="h1">{hero.title}</Typography>
+            <Typography className="hero-copy">{hero.copy}</Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2.5} className="hero-actions">
               <Button href="#contact" variant="contained" color="secondary" size="large" endIcon={<EmailOutlinedIcon />}>
                 Hablemos
@@ -214,18 +178,17 @@ function App() {
         <Box component="main">
           <Box component="section" aria-labelledby="intro-title" className="section-block">
             <Container maxWidth="lg">
-              <Grid container spacing={{ xs: 4, md: 7 }} alignItems="flex-start">
-                <Grid item xs={12} md={5}>
+              <Grid container spacing={{ xs: 4, md: 7 }} sx={{ alignItems: 'flex-start' }}>
+                <Grid size={{ xs: 12, md: 5 }}>
                   <Typography className="section-kicker">Experiencia + tecnología</Typography>
                   <Typography id="intro-title" variant="h2">
-                    Creamos productos simples de usar y listos para escalar.
+                    {intro.title}
                   </Typography>
                 </Grid>
-                <Grid item xs={12} md={7}>
+                <Grid size={{ xs: 12, md: 7 }}>
                   <Stack spacing={3}>
                     <Typography color="text.secondary" className="body-copy">
-                      Creamos soluciones que acompañan el crecimiento real de tu negocio. Combinamos una experiencia
-                      clara, una arquitectura estable y estrategia digital para que cada decisión tenga impacto.
+                      {intro.copy}
                     </Typography>
                     <Stack component="ul" spacing={1.5} className="highlight-list" aria-label="Ventajas de Nativo Sistemas">
                       {highlights.map((item) => (
@@ -245,7 +208,7 @@ function App() {
             <Container maxWidth="lg">
               <Grid container spacing={2.5}>
                 {stats.map((stat) => (
-                  <Grid item xs={12} md={4} key={stat.label}>
+                  <Grid size={{ xs: 12, md: 4 }} key={stat.label}>
                     <Card variant="outlined" className="stat-card">
                       <CardContent>
                         <Typography component="strong">{stat.value}</Typography>
@@ -269,11 +232,11 @@ function App() {
 
               <Grid container spacing={2.5}>
                 {services.map((service) => (
-                  <Grid item xs={12} sm={6} lg={3} key={service.title}>
+                  <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={service.title}>
                     <Card variant="outlined" className="service-card">
                       <CardContent>
                         <Box className="service-icon" aria-hidden="true">
-                          {service.icon}
+                          {serviceIcons[service.id]}
                         </Box>
                         <Typography variant="h3">{service.title}</Typography>
                         <Typography color="text.secondary">{service.text}</Typography>
@@ -311,24 +274,24 @@ function App() {
               <Typography id="contact-title" variant="h2">
                 Hablemos de tu próxima solución digital.
               </Typography>
-              <Typography>Rosario, Santa Fe, Argentina</Typography>
+              <Typography>{`${company.city}, ${company.region}, ${company.countryName}`}</Typography>
             </Box>
             <Button
-              href="mailto:nativosistemas@outlook.com.ar"
+              href={`mailto:${company.email}`}
               variant="contained"
               color="secondary"
               size="large"
               startIcon={<EmailOutlinedIcon />}
             >
-              nativosistemas@outlook.com.ar
+              {company.email}
             </Button>
           </Container>
         </Box>
 
         <Container maxWidth="lg" component="footer" className="site-footer">
-          <Stack direction="row" spacing={1} alignItems="center">
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
             <AppsIcon color="primary" />
-            <Typography>Nativo Sistemas</Typography>
+            <Typography>{company.name}</Typography>
           </Stack>
           <IconButton component="a" href="#top" aria-label="Volver al inicio">
             <ArrowUpwardIcon />
