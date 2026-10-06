@@ -215,6 +215,10 @@
   padding: 24px 0;
 }
 
+.process-list li + li {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
 .process-list span {
   color: #0f766e;
   font-size: 1.8rem;

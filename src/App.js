@@ -8,7 +8,6 @@ import {
   Chip,
   Container,
   CssBaseline,
-  Divider,
   Drawer,
   Grid,
   IconButton,
@@ -257,7 +256,7 @@ function App() {
                 </Typography>
               </Box>
 
-              <Stack component="ol" className="process-list" divider={<Divider />}>
+              <Stack component="ol" className="process-list">
                 {processSteps.map((step, index) => (
                   <Box component="li" key={step}>
                     <Typography component="span">{String(index + 1).padStart(2, '0')}</Typography>
